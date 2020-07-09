@@ -3,7 +3,7 @@
     <h1 class="text-center">
       Seconds <br /> Web Development
     </h1>
-    <p class="text-center">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in the Davis/Weber County Utah area.</p>
+    <p class="text-center">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in Davis/Weber County Utah.</p>
     <b-button variant="outline-success">Contact Me</b-button>
     <h1 class="text-center">
       Job Experience
