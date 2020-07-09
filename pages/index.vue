@@ -6,6 +6,14 @@
     <p class="text-center">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in Davis/Weber County Utah.</p>
     <b-button variant="outline-success">Contact Me</b-button>
     <h1 class="text-center">
+      Education
+    </h1>
+    <b-row>
+      <b-col>
+        Bachelors Degree In Computer Science From Weber State University
+      </b-col>
+    </b-row>
+    <h1 class="text-center">
       Job Experience
     </h1>
     <b-row>
