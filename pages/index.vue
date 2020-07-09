@@ -15,8 +15,6 @@
           :img-src="job.img"
           :img-alt="job.company"
           img-top
-          img-height="125"
-          img-width="125"
           class="mb-2"
         >
           <b-card-text>
@@ -46,6 +44,62 @@
 export default {
   data: () => {
     return {
+      skills: [
+        {
+          category: 'Desktop',
+          name: 'Electron',
+          img: require("../assets/ElectronLogo.png"),
+          details: ""
+        },
+        {
+          category: 'Desktop',
+          name: 'Windows Forms',
+          img: require("../assets/VisualStudio2017Logo.png"),
+          details: ''
+        },
+        {
+          category: 'Front End',
+          name: 'Vue Js',
+          img: require("../assets/VueLogo.png"),
+          details: ''
+        },
+        {
+          category: 'Back End',
+          name: 'Node Js',
+          img: require("../assets/nodeJsLogo.png"),
+          details: ''
+        },
+        {
+          category: 'Back End',
+          name: 'C#',
+          img: require("../assets/csharplogo.png"),
+          details: ''
+        },
+        {
+          category: 'Framework',
+          name: 'Web Forms',
+          img: require("../assets/aspnet.png"),
+          details: ''
+        },
+        {
+          category: 'Database',
+          name: 'Postgresql',
+          img: require("../assets/Postgresql.png"),
+          details: ''
+        },
+        {
+          category: 'Database',
+          name: 'Sql Server',
+          img: require("../assets/SqlServer.svg"),
+          details: ''
+        },
+        {
+          category: 'Mobile',
+          name: 'Swift',
+          img: require("../assets/swiftLogo.png"),
+          details: ''
+        }
+      ],
       jobs: [
         {
           id: 1,
