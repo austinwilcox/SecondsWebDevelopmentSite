@@ -9,8 +9,34 @@
       Job Experience
     </h1>
     <b-row>
-      <b-col v-for="job in jobs" :key="job.title" sm="12" md="12" lg="12" xl="12">
-        <h1>{{job.title}}</h1>
+      <b-col v-for="job in jobs" :key="job.title" sm="12" md="12" lg="6" xl="6">
+        <b-card
+          :title="job.title"
+          :img-src="job.img"
+          :img-alt="job.company"
+          img-top
+          img-height="125"
+          img-width="125"
+          class="mb-2"
+        >
+          <b-card-text>
+            {{job.company}}
+          </b-card-text>
+          <b-card-subtitle class="small text-muted">
+            {{job.hireDate}} - {{job.endDate}}
+          </b-card-subtitle>
+          <b-card-text>
+            {{job.description}}
+          </b-card-text>
+          <div style="paddingTop: 20px; paddingBottom: 20px;">
+            <b-button :class="job.detailsVisible ? null : 'collapsed'" :aria-expanded="job.detailsVisible ? 'true' : 'false'" @click="job.detailsVisible = !job.detailsVisible" variant="primary">Details</b-button>
+            <b-collapse :id="job.id" v-model="job.detailsVisible" class="mt-2">
+              <b-table striped hover :items="job.accomplishments" fields="">
+              </b-table>
+            </b-collapse>
+          </div>
+          <b-badge pill variant="light" v-for="tool in job.tools" :key="tool" style="margin: 5px; padding: 10px;">{{tool}}</b-badge>
+        </b-card>
       </b-col>
     </b-row>
   </div>
@@ -22,18 +48,57 @@ export default {
     return {
       jobs: [
         {
+          id: 1,
           title: 'Programmer',
-          description: 'Programming all kinds of things',
-          hireDate: '',
-          endDate: '',
+          company: 'Weber Basin Water Conservancy District',
+          img: require("../assets/districtlogo.png"),
+          description: 'Programmer, developed web forms, windows forms, api services, and IOS mobile applications.',
+          hireDate: 'November 2018',
+          endDate: 'Current',
+          detailsVisible: false,
+          tools: [
+            "Web Forms",
+            "C#",
+            "Windows Forms",
+            "ASP.NET",
+            "IIS",
+            "Web Api",
+            "Swift",
+            "Sql Server"
+          ],
           accomplishments: [
             {
-              label: '',
-              details: ''
+              label: 'Inventory',
+              details: 'Designed and built an inventory system to manage the several warehouses.'
             },
             {
-              label: '',
-              details: ''
+              label: 'Subdivision Management System',
+              details: 'TODO'
+            }
+          ]
+        },
+        {
+          id: 2,
+          title: 'Lead Developer',
+          company: 'The League Esports',
+          img: "http://theleagueesports.com/media/tle-logo.png",
+          description: 'Lead developer/architect in developing the site and applications.',
+          hireDate: 'January 2020',
+          endDate: 'Current',
+          detailsVisible: false,
+          tools: [
+            "Vue",
+            "Nuxt",
+            "Node",
+            "Postgres",
+            "Ubuntu",
+            "Nginx",
+            "SEO"
+          ],
+          accomplishments: [
+            {
+              label: 'Site',
+              details: 'Designed and built the entire site/application from scratch'
             }
           ]
         }
