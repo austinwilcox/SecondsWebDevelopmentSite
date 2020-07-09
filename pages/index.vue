@@ -29,7 +29,7 @@
           <div style="paddingTop: 20px; paddingBottom: 20px;">
             <b-button :class="job.detailsVisible ? null : 'collapsed'" :aria-expanded="job.detailsVisible ? 'true' : 'false'" @click="job.detailsVisible = !job.detailsVisible" variant="primary">Details</b-button>
             <b-collapse :id="job.id" v-model="job.detailsVisible" class="mt-2">
-              <b-table striped hover :items="job.accomplishments" fields="">
+              <b-table striped hover :items="job.accomplishments" fields="[]">
               </b-table>
             </b-collapse>
           </div>
@@ -37,6 +37,17 @@
         </b-card>
       </b-col>
     </b-row>
+    <div id="skills">
+      <h1 class="text-center">Skills</h1>
+      <b-row>
+        <b-col sm="12" md="6" lg="4" xl="3" v-for="skill in skills" :key="skill.name">
+          <div class="text-center" style="paddingTop: 20px;">
+            <b-img :src="skill.img" fluid :alt="skill.name" width="75" height="75"></b-img>
+            <h4 style="paddingTop: 25px;">{{skill.name}}</h4>
+          </div>
+        </b-col>
+      </b-row>
+    </div>
   </div>
 </template>
 
