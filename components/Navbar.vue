@@ -5,7 +5,6 @@
     <b-collapse id="nav-collapse" is-nav>
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-button variant="primary" to="/ContactMe">Contact Me</b-button>
         <b-button variant="primary" to="/OpenSource">Open Source</b-button>
       </b-navbar-nav>
     </b-collapse>

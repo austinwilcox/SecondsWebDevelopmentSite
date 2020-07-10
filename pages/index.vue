@@ -4,27 +4,42 @@
       Seconds <br /> Web Development
     </h1>
     <p class="text-center">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in Davis/Weber County Utah.</p>
-    <b-button variant="outline-success">Contact Me</b-button>
+    <b-row>
+      <b-col class="text-center">
+        <b-button variant="outline-success" href="mailto: austin21wilcox@gmail.com">Contact Me</b-button>
+      </b-col>
+    </b-row>
     <h1 class="text-center">
       Education
     </h1>
     <b-row>
-      <b-col>
-        Bachelors Degree In Computer Science From Weber State University
+      <b-col sm="12" md="12" lg="12" xl="12">
+        <b-card
+          title="Computer Science - Bachelors Degree"
+          img-src="../assets/weberStateWildcat.png"
+          img-alt="Weber State Wildcat"
+          img-width="175"
+          img-height="127.148437"
+          img-left
+          class="m-2"
+        >
+          <b-card-subtitle class="small text-muted">Fall 2015 - Fall 2019</b-card-subtitle>
+          <b-card-text>
+            Weber State University, Ogden, Utah
+          </b-card-text>
+        </b-card>
       </b-col>
     </b-row>
     <h1 class="text-center">
-      Job Experience
+      Job Experiences
     </h1>
     <b-row>
       <b-col v-for="job in jobs" :key="job.title" sm="12" md="12" lg="6" xl="6">
         <b-card
-          :title="job.title"
-          :img-src="job.img"
-          :img-alt="job.company"
-          img-top
           class="mb-2"
         >
+        <b-img :src="job.img" :alt="job.company" :width="job.imgWidth" :height="job.imgHeight"></b-img>
+        <b-card-title :title="job.title"></b-card-title>
           <b-card-text>
             {{job.company}}
           </b-card-text>
@@ -91,7 +106,7 @@ export default {
         {
           category: 'Back End',
           name: 'C#',
-          img: require("../assets/csharplogo.png"),
+          img: require("../assets/csharpLogo.png"),
           details: ''
         },
         {
@@ -117,6 +132,12 @@ export default {
           name: 'Swift',
           img: require("../assets/swiftLogo.png"),
           details: ''
+        },
+        {
+          category: 'Server',
+          name: 'Ubuntu',
+          img: require("../assets/ubuntu.png"),
+          details: ''
         }
       ],
       jobs: [
@@ -125,6 +146,8 @@ export default {
           title: 'Programmer',
           company: 'Weber Basin Water Conservancy District',
           img: require("../assets/districtlogo.png"),
+          imgWidth: 456.488,
+          imgHeight: 150,
           description: 'Programmer, developed web forms, windows forms, api services, and IOS mobile applications.',
           hireDate: 'November 2018',
           endDate: 'Current',
@@ -154,7 +177,9 @@ export default {
           id: 2,
           title: 'Lead Developer',
           company: 'The League Esports',
-          img: "http://theleagueesports.com/media/tle-logo.png",
+          img: require("../assets/tleLogo.png"),
+          imgWidth: 150,
+          imgHeight: 150,
           description: 'Lead developer/architect in developing the site and applications.',
           hireDate: 'January 2020',
           endDate: 'Current',
