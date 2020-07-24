@@ -1,81 +1,100 @@
 <template>
   <div>
-    <h1 class="text-center">
-      Seconds <br /> Web Development
-    </h1>
-    <p class="text-center">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in Davis/Weber County Utah.</p>
-    <b-row>
-      <b-col class="text-center">
-        <b-button variant="outline-success" href="mailto: austin21wilcox@gmail.com">Contact Me</b-button>
-      </b-col>
-    </b-row>
-    <h1 class="text-center">
-      Education
-    </h1>
-    <b-row>
-      <b-col sm="12" md="12" lg="12" xl="12">
-        <b-card
-          title="Computer Science - Bachelors Degree"
-          img-src="../assets/weberStateWildcat.png"
-          img-alt="Weber State Wildcat"
-          img-width="175"
-          img-height="127.148437"
-          img-left
-          class="m-2"
-        >
-          <b-card-subtitle class="small text-muted">Fall 2015 - Fall 2019</b-card-subtitle>
-          <b-card-text>
-            Weber State University, Ogden, Utah
-          </b-card-text>
-        </b-card>
-      </b-col>
-    </b-row>
-    <h1 class="text-center">
-      Job Experiences
-    </h1>
-    <b-row>
-      <b-col v-for="job in jobs" :key="job.title" sm="12" md="12" lg="6" xl="6">
-        <b-card
-          class="mb-2"
-        >
-        <b-img :src="job.img" :alt="job.company" :width="job.imgWidth" :height="job.imgHeight"></b-img>
-        <b-card-title :title="job.title"></b-card-title>
-          <b-card-text>
-            {{job.company}}
-          </b-card-text>
-          <b-card-subtitle class="small text-muted">
-            {{job.hireDate}} - {{job.endDate}}
-          </b-card-subtitle>
-          <b-card-text>
-            {{job.description}}
-          </b-card-text>
-          <div style="paddingTop: 20px; paddingBottom: 20px;">
-            <b-button :class="job.detailsVisible ? null : 'collapsed'" :aria-expanded="job.detailsVisible ? 'true' : 'false'" @click="job.detailsVisible = !job.detailsVisible" variant="primary">Details</b-button>
-            <b-collapse :id="job.id" v-model="job.detailsVisible" class="mt-2">
-              <b-table striped hover :items="job.accomplishments" fields="[]">
-              </b-table>
-            </b-collapse>
-          </div>
-          <b-badge pill variant="light" v-for="tool in job.tools" :key="tool" style="margin: 5px; padding: 10px;">{{tool}}</b-badge>
-        </b-card>
-      </b-col>
-    </b-row>
+    <div id="heroImage" class="section">
+      <b-container>
+        <h1 class="text-center text-white" style="padding-top: 350px;">
+          Seconds <br /> Web Development
+        </h1>
+        <p class="text-center text-white">Hi, my name's Austin and I'm a Freelance Full Stack Web Developer in Davis/Weber County Utah.</p>
+        <b-row>
+          <b-col class="text-center">
+            <b-button variant="danger" id="contactMeButton" class="text-white" href="mailto: austin21wilcox@gmail.com">Contact Me</b-button>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <div id="education" class="section">
+      <b-container>
+        <h1 class="text-center">
+          Education
+        </h1>
+        <b-row>
+          <b-col sm="12" md="12" lg="12" xl="12">
+            <b-card
+              title="Computer Science - Bachelors Degree"
+              img-src="../assets/weberStateWildcat.png"
+              img-alt="Weber State Wildcat"
+              img-width="175"
+              img-height="127.148437"
+              img-left
+              class="m-2"
+            >
+              <b-card-subtitle class="small text-muted">Fall 2015 - Fall 2019</b-card-subtitle>
+              <b-card-text>
+                Weber State University, Ogden, Utah
+              </b-card-text>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
+    <div id="jobs" class="section">
+      <b-container>
+        <h1 class="text-center text-white" style="padding-bottom: 15px;">
+          Job Experience
+        </h1>
+        <b-row>
+          <b-col v-for="job in jobs" :key="job.title" sm="12" md="12" lg="6" xl="6">
+            <b-card
+              class="mb-2"
+            >
+            <b-img :src="job.img" :alt="job.company" :width="job.imgWidth" :height="job.imgHeight"></b-img>
+            <b-card-title :title="job.title"></b-card-title>
+              <b-card-text>
+                {{job.company}}
+              </b-card-text>
+              <b-card-subtitle class="small text-muted">
+                {{job.hireDate}} - {{job.endDate}}
+              </b-card-subtitle>
+              <b-card-text>
+                {{job.description}}
+              </b-card-text>
+              <div style="paddingTop: 20px; paddingBottom: 20px;">
+                <b-button :class="job.detailsVisible ? null : 'collapsed'" :aria-expanded="job.detailsVisible ? 'true' : 'false'" @click="job.detailsVisible = !job.detailsVisible" variant="primary">Details</b-button>
+                <b-collapse :id="job.id" v-model="job.detailsVisible" class="mt-2">
+                  <b-table striped hover :items="job.accomplishments" fields="[]">
+                  </b-table>
+                </b-collapse>
+              </div>
+              <b-badge pill variant="light" v-for="tool in job.tools" :key="tool" style="margin: 5px; padding: 10px;">{{tool}}</b-badge>
+            </b-card>
+          </b-col>
+        </b-row>
+      </b-container>
+    </div>
     <div id="skills">
-      <h1 class="text-center">Skills</h1>
-      <b-row>
-        <b-col sm="12" md="6" lg="4" xl="3" v-for="skill in skills" :key="skill.name">
-          <div class="text-center" style="paddingTop: 20px;">
-            <b-img :src="skill.img" fluid :alt="skill.name" width="75" height="75"></b-img>
-            <h4 style="paddingTop: 25px;">{{skill.name}}</h4>
-          </div>
-        </b-col>
-      </b-row>
+      <b-container>
+        <h1 class="text-center section">
+          Skills
+        </h1>
+        <b-row>
+          <b-col sm="12" md="6" lg="4" xl="3" v-for="skill in skills" :key="skill.name">
+            <div class="text-center" style="paddingTop: 20px;">
+              <b-img :src="skill.img" fluid :alt="skill.name" width="75" height="75"></b-img>
+              <h4 style="paddingTop: 25px;">{{skill.name}}</h4>
+            </div>
+          </b-col>
+        </b-row>
+      </b-container>
     </div>
   </div>
 </template>
 
 <script>
 export default {
+  head() {
+    title: 'Seconds Web Dev'
+  },
   data: () => {
     return {
       skills: [
@@ -143,7 +162,7 @@ export default {
       jobs: [
         {
           id: 1,
-          title: 'Programmer',
+          title: 'Full Stack Developer',
           company: 'Weber Basin Water Conservancy District',
           img: require("../assets/districtlogo.png"),
           imgWidth: 456.488,
@@ -207,4 +226,32 @@ export default {
 </script>
 
 <style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.section {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#heroImage {
+  background-image: url('../assets/smokeBackground.png');
+  background-color: aliceblue;
+  background-size: cover;
+  height: 1000px;
+}
+
+#contactMeButton {
+  padding: 10px;
+}
+
+#education {
+  padding-bottom: 70px;
+}
+
+#jobs {
+  background-color: grey;
+}
 </style>

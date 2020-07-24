@@ -1,6 +1,6 @@
 <template>
-  <b-card bg-variant="primary" class="text-center">
-    <b-button v-for="icon in icons" :key="icon.icon" :href="icon.to" variant="secondary" class="px-3 mx-2 my-2" target="blank">{{icon.icon}}</b-button>
+  <b-card bg-variant="secondary" class="text-center">
+    <b-button v-for="icon in icons" :key="icon.icon" :href="icon.to" variant="primary" class="px-3 mx-2 my-2" target="blank">{{icon.icon}}</b-button>
     <strong><hr /></strong>
     <b-card-text class="text-center">
       2020 - Seconds Web Development
