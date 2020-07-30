@@ -93,7 +93,9 @@
 <script>
 export default {
   head() {
-    title: 'Seconds Web Dev'
+    return {
+      title: 'Seconds Web Dev'
+    }
   },
   data: () => {
     return {
