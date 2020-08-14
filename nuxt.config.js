@@ -54,7 +54,6 @@ export default {
     'bootstrap-vue/nuxt',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
   ],
   bootstrapVue: {
     bootstrapCSS: false,
@@ -64,7 +63,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'http://localhost:4000/api/v1'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
